@@ -29,7 +29,22 @@ export class LoanTypesComponent implements OnInit {
   }
 
   addLoanType() {
-    console.log(this.addLoanDetails.value);
+    /*
+      - Get entire data in one go
+          this.addLoanDetails.value 
+      - Get particular form control data
+          this.addLoanDetails.get('loanType').value
+      - Get data on value change
+          valueChanges.subscibe(data => {})
+    */
+         console.log(this.addLoanDetails.value);
+         console.log(this.addLoanDetails.get('loanType').value);
+
+         this.addLoanDetails.valueChanges.subscribe(data => {
+           console.log(data);
+           
+         })
+         
   }
 
 }
